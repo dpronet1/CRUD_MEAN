@@ -1,0 +1,32 @@
+<div class="table-responsive-sm table-responsive-md table-responsive-lg">
+    <table class="table mb-5 table-striped table-bordered">
+      <thead class="tabla-encabezado">
+        <tr>
+          <th>Marca</th>
+          <th>ID</th>
+          <th>Modelo</th>
+          <th>Color</th>
+          <th>Precio</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="lista.length">
+        <tr *ngFor="let auto of lista">
+          <td>{{ auto.marca }}</td>
+          <td>{{ auto._id }}</td>
+          <td>{{ auto.modelo }}</td>
+          <td>{{ auto.color }}</td>
+          <td>{{ auto.precio }}</td>
+          <td>
+            <!-- <button type="button" class="btn btn-danger m-2" (click)="eliminar(item)">Eliminar</button> -->
+            <button type="button" class="btn btn-danger m-2" (click)="eliminar(auto)">Eliminar</button> -->
+          </td>
+        </tr>
+      </tbody>
+      <tbody *ngIf="!lista.length">
+        <tr>
+          <td colspan="5">No hay registros para mostrar</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
